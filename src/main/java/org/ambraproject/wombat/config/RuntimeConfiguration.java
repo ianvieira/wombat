@@ -22,6 +22,7 @@
 
 package org.ambraproject.wombat.config;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.ambraproject.wombat.config.site.SiteSet;
 import org.ambraproject.wombat.config.theme.Theme;
@@ -105,25 +106,7 @@ public interface RuntimeConfiguration {
    */
   ImmutableSet<String> getEnabledDevFeatures();
 
-  /**
-   * Parse the user-defined themes.
-   *
-   * @param internalThemes constant themes provided by the webapp
-   * @param rootTheme      the default parent theme to be applied to any user-defined theme without an explicit parent
-   * @return the set of all available themes
-   * @throws org.ambraproject.wombat.config.theme.ThemeTree.ThemeConfigurationException
-   * @throws java.lang.IllegalArgumentException                                         if {@code internalThemes} does
-   *                                                                                    not contain {@code rootTheme}
-   */
-  ThemeTree getThemes(Collection<? extends Theme> internalThemes, Theme rootTheme) throws ThemeTree.ThemeConfigurationException;
-
-  /**
-   * Produce a map from site keys to each site's theme.
-   *
-   * @param themeTree the set of available themes
-   * @return map from site keys to each site's theme
-   */
-  SiteSet getSites(ThemeTree themeTree);
+  ImmutableList<ThemeSource> getThemeSources();
 
   interface CasConfiguration {
     String getCasUrl();

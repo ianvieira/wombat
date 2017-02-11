@@ -107,6 +107,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.Collection;
 
 @Configuration
 public class SpringConfiguration {
@@ -115,17 +116,23 @@ public class SpringConfiguration {
   public ThemeTree themeTree(ServletContext servletContext, RuntimeConfiguration runtimeConfiguration)
       throws ThemeTree.ThemeConfigurationException {
     String path = "/WEB-INF/themes/";
-    InternalTheme root = new InternalTheme(".Root", null, servletContext, path + "root/");
-    ImmutableList<InternalTheme> listOfRoot = ImmutableList.of(root);
-    InternalTheme desktop = new InternalTheme(".Desktop", listOfRoot, servletContext, path + "desktop/");
-    InternalTheme mobile = new InternalTheme(".Mobile", listOfRoot, servletContext, path + "mobile/");
-    return runtimeConfiguration.getThemes(ImmutableSet.of(root, desktop, mobile), root);
+    InternalTheme root = new InternalTheme(".Root", ImmutableList.of(), servletContext, path + "root/");
+    InternalTheme desktop = new InternalTheme(".Desktop", ImmutableList.of(root), servletContext, path + "desktop/");
+    InternalTheme mobile = new InternalTheme(".Mobile", ImmutableList.of(root), servletContext, path + "mobile/");
+    Collection<InternalTheme> internalThemes = ImmutableList.of(root, desktop, mobile);
+
+    ImmutableList<ThemeSource> themeSources = runtimeConfiguration.getThemeSources();
+    for (ThemeSource themeSource : themeSources) {
+      themeSource.readThemes();
+    }
+
+    return null;
   }
 
   @Bean
   public SiteSet siteSet(RuntimeConfiguration runtimeConfiguration,
                          ThemeTree themeTree) {
-    return runtimeConfiguration.getSites(themeTree);
+    return null;
   }
 
   @Bean
