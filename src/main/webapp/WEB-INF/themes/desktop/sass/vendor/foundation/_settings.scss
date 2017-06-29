@@ -222,7 +222,7 @@ $blockquote-cite-link-color: $clr-link;
 
 // Accordion
 
- $include-html-accordion-classes: false;
+$include-html-accordion-classes: false;
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: #efefef  ;
@@ -237,7 +237,7 @@ $blockquote-cite-link-color: $clr-link;
 
 // Alert Boxes
 
- $include-html-alert-classes: false;
+$include-html-alert-classes: false;
 
 // We use this to control alert padding.
 // $alert-padding-top: rem-calc(14);
@@ -287,7 +287,7 @@ $align-block-grid-to-grid: true;
 
 // Breadcrumbs
 
- $include-html-nav-classes: false;
+$include-html-nav-classes: false;
 
 // We use this to set the background color for the breadcrumb container.
 // $crumb-bg: scale-color($secondary-color, $lightness: 55%);
@@ -479,7 +479,7 @@ $include-html-media-classes: false;
 
 // Forms
 
- $include-html-form-classes: false;
+$include-html-form-classes: false;
 
 // We use this to set the base for lots of form spacing and positioning styles
 // $form-spacing: rem-calc(16);
@@ -1146,9 +1146,9 @@ $topbar-dropdown-bg: $topbar-bg-color;
 $topbar-dropdown-link-color: $clr-body-text;
 $topbar-dropdown-link-bg: transparent;
 $topbar-dropdown-link-weight: normal;
- $topbar-dropdown-toggle-size: false;
- $topbar-dropdown-toggle-color: false;
- $topbar-dropdown-toggle-alpha: false;
+$topbar-dropdown-toggle-size: false;
+$topbar-dropdown-toggle-color: false;
+$topbar-dropdown-toggle-alpha: false;
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $plos-default;
@@ -1168,20 +1168,20 @@ $topbar-link-padding: 0;
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
 
- $topbar-dropdown-label-color: false;
- $topbar-dropdown-label-text-transform: false;
- $topbar-dropdown-label-font-weight: false;
- $topbar-dropdown-label-font-size: false;
- $topbar-dropdown-label-bg: false;
+$topbar-dropdown-label-color: false;
+$topbar-dropdown-label-text-transform: false;
+$topbar-dropdown-label-font-weight: false;
+$topbar-dropdown-label-font-size: false;
+$topbar-dropdown-label-bg: false;
 
 // Top menu icon styles
- $topbar-menu-link-transform: false;
- $topbar-menu-link-font-size: false;
- $topbar-menu-link-weight: false;
- $topbar-menu-link-color: false;
- $topbar-menu-icon-color: false;
- $topbar-menu-link-color-toggled: false;
- $topbar-menu-icon-color-toggled: false;
+$topbar-menu-link-transform: false;
+$topbar-menu-link-font-size: false;
+$topbar-menu-link-weight: false;
+$topbar-menu-link-color: false;
+$topbar-menu-icon-color: false;
+$topbar-menu-link-color-toggled: false;
+$topbar-menu-icon-color-toggled: false;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar

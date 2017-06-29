@@ -72,9 +72,17 @@ $grid-width-inside: ($row-width - $grid-gutter);
 }
 
 
-@mixin plos-grid-column($pixelwidth, $gutter: outside, $gutter-width: $grid-gutter, $collapse: null, $f-gridargs...) {
+@mixin plos-grid-column($pixelwidth, $gutter: outside, $gutter-width: $grid-gutter, $collapse: null, $columns:false,
+  $last-column:false,
+  $center:false,
+  $offset:false,
+  $push:false,
+  $pull:false,
+  $collapse:false,
+  $float:true,
+  $position:false) {
   // from foundation:
-  @include grid-column($collapse: $collapse, $f-gridargs...);
+  @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float, $position);
   // sets the width
   @if $pixelwidth == full-width {
     width: $grid-width-inside;
@@ -108,9 +116,16 @@ $grid-width-inside: ($row-width - $grid-gutter);
   @return ( $colNumber * $columnWidth );
 }
 
-@mixin plos-grid-column-nomargin($pixelwidth, $f-gridargs...) {
+@mixin plos-grid-column-nomargin($pixelwidth, $columns:false,
+  $last-column:false,
+  $center:false,
+  $offset:false,
+  $push:false,
+  $pull:false,
+  $float:true,
+  $position:false) {
   // from foundation:
-  @include grid-column($collapse: null, $f-gridargs...);
+  @include grid-column($columns, $last-column, $center, $offset, $push, $pull, null, $float, $position);
   // sets the width
   @if $pixelwidth == full-width {
     width: $grid-width-inside;
